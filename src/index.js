@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {Provider} from 'react-redux'
+import Store from './store'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const Wrap = function(){
+  return (
+    <Provider store={Store}>
+      <App/>
+    </Provider>
+  )
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  <Wrap/>
   </React.StrictMode>,
   document.getElementById('root')
 );

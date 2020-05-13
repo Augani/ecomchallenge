@@ -1,0 +1,150 @@
+.logo{
+    letter-spacing: 1rem;
+    font-weight: 700 !important;
+}
+
+.navBar{
+    height: 10% !important;
+    padding: 1rem;
+}
+
+.navLink{
+    font-size: 1.5rem;
+}
+
+.mainLog{
+    font-size: 5rem !important;
+}
+
+.productTile img{
+    border-radius: 5px;
+    height: 10%;
+    width: 10%;
+}
+
+.checkout button{
+   
+}
+
+.productTile span{
+    background-color: grey;
+    color: aliceblue;
+    border-radius: 3px;
+}
+
+.productTile{
+    height: 11rem;
+    position: relative;
+    border-radius: 5px;
+}
+
+.cartCont{
+    width: 9rem;
+    
+    background-color: white;
+    height: 9rem;
+    right: 10px;
+    bottom: 10px;
+}
+
+.cartCont span{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.cartCont svg{
+    width: 50%;
+    height: 50%;
+    margin: 10px !important;
+}
+
+.cardCont::hover{
+    transform: scale(1.1);
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+.productDes h1{
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+
+.productDes h1:nth-child(1){
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.brand{
+    word-wrap: normal;
+    letter-spacing: 1em;
+}
+
+.productMain img{
+    border-radius: 10px;
+    height: 90%;
+    width: 50%;
+}
+
+.brandX{
+    position: relative;
+}
+
+.brandX .brand{
+   
+   
+    height: 100%;
+     transform: translate3d(0, 0, 0); 
+    animation: moveSlideShow 15s linear infinite;
+}
+.brandY{
+
+}
+
+@keyframes moveSlideshow {
+    100% { 
+      transform: translateX(-66.6666%);  
+    }
+  }
+
+@keyframes slideshow {
+    0%    { left: 0; }
+    100%  { left: -200%; }
+  }
+
+.cartReview{
+max-height: 60vh !important;
+overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 2px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(194, 187, 187);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(207, 206, 206);
+  }
+
+
+.authLink{
+    font-size: 1.6rem;
+    font-stretch: condensed;
+}
+
+.authLink:hover{
+    border-right: 2px grey solid;
+    transform: scale(1.1);
+}

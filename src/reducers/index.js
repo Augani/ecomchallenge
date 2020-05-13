@@ -1,14 +1,9 @@
-import {LoginUser} from '../actions';
-import {LOGIN, LOGOUT, REGISTER} from '../actions/types';
+import {LOGIN, LOGOUT, REGISTER, UPDATE_CART, DELETE_ITEM} from '../actions/types';
 
 const INITIAL_STATE = {
     LOGGED_IN: false,
-    USER: {},
-    THEME: "light",
-    user:localStorage.getItem('userInfo')? JSON.parse(localStorage.getItem('userInfo'))[0]:{},
-    PROFILE:{
-      fullName: 'Augustus Otu'
-    }
+    PROFILE: localStorage.getItem('userInfo')|| {},
+    CART: JSON.parse(localStorage.getItem('cart')) || []
 };
 
 const Reducer = (state = INITIAL_STATE,action)=>{
@@ -28,8 +23,18 @@ const Reducer = (state = INITIAL_STATE,action)=>{
         case REGISTER:
             return {
                 ...state,
-                user: action.payload
+                PROFILE: action.payload
             }     
+         case UPDATE_CART:
+             return {
+                 ...state,
+                 CART: [...state.CART, action.payload]
+             }   
+          case DELETE_ITEM:
+              return {
+                  ...state,
+                  CART: [...state.CART.filter(r=>r.id != action.payload.id)]
+              }      
         default:
             return state;    
 
