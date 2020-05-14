@@ -229,7 +229,7 @@ function CartW (props) {
        </div>
       </div>
       <div className="w-full md:w-3/4 lg:w-3/5 checkout flex flex-col items-center justify-center">
-         <Button className="w-full md:w-3/4 lg:w-3/5 mb-10 bg-black h-16 text-white">CHECKOUT</Button>
+         <Button className="w-3/4 lg:w-3/5 mb-10 bg-black h-16 text-white">CHECKOUT</Button>
          <Link to="/"><h5 className="text-2xl">Continue Shopping</h5></Link>   
       </div>
     </div>
@@ -252,10 +252,10 @@ function Tile (props) {
     <div className='productTile shadow-2xl mb-5 bg-gray-100 w-full lg:w-4/5 py-2 px-2'>
       <div className='flex flex-row justify-around items-center'>
         <img src={props.product.picture} className="shadow-2xl" />
-        <div className='md:w-full lg:w-2/3 border-l-2 border-lime px-12 flex flex-col justify-center'>
-          <h1 className="font-black">{props.product.title}</h1>
-          <h5>{props.product.description}</h5>
-          <h6 className="my-2 font-black">{props.product.price}</h6>
+        <div className='w-2/4 md:w-full lg:w-2/3 border-l-2 border-lime h-full px-12 flex flex-col'>
+          <h1 className="font-black text-xl text-center">{props.product.title}</h1>
+         
+          <h6 className="my-2 font-black text-center">{props.product.price}</h6>
           <span
             onClick={() => deleteItem(props.product.id)}
             className='cursor-pointer deleter text-2xl text-black font-bold bg-transparent  text-center absolute'
