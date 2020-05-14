@@ -11,7 +11,7 @@ function Navbar(props){
             <h2 className="logo text-3xl text-black">OSEI SRIBOE</h2>
             </div>
 
-            <div className={`navs flex flex-row justify-around w-2/5`}>
+            <div className={`navs hidden md:flex flex-row justify-around w-2/5`}>
                 <Link><h5 className="navLink">Sunglasses</h5></Link>
                 <Link><h5 className="navLink">Shirts</h5></Link>
                 <Link><h5 className="navLink">Shoes</h5></Link>

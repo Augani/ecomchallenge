@@ -13,6 +13,12 @@ import { useSpring, animated } from 'react-spring'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import Badge from '@material-ui/core/Badge'
 import { toaster } from 'evergreen-ui'
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+  } from "react-device-detect";
 const Brands = [
     
     "CHANEL",
@@ -85,7 +91,12 @@ class Index extends PureComponent {
           </Link>
         ) : null}
         <Navbar />
-        {this.renderPage(this.props.location.pathname)}
+        {!isMobile? this.renderPage(this.props.location.pathname):(
+            <div className="w-full text-2xl h-full flex flex-col justify-center font-bold text-center text-black">
+                Please view on your pc For best viewing experience <br/>
+                Mobile view available soon
+            </div>
+        )}
 
       </div>
     )

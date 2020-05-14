@@ -23,7 +23,7 @@ function Login() {
 
     <Button className="w-full mt-6 mb-16 bg-black text-white h-16">Login</Button>
         <div className="w-full flex flex-col items-center">
-           <Link to="/forgot"> <h4 className="mb-5 text-xl">Forgot Password?</h4></Link>
+           {/* <Link to="/"> <h4 className="mb-5 text-xl">Forgot Password?</h4></Link> */}
            <Link to="/create"> <h4 className="mb-5 text-lg w-full">Don't have an account? Create One?</h4></Link>
            <Link to="/"> <h4 className="mb-5 text-xl">Back Home</h4></Link>
            
