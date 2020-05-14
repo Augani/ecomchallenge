@@ -2,13 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import Auth from './auth';
+import MenuIcon from '@material-ui/icons/Menu';
 
 function Navbar(props){
-   console.log(props)
+   
     return (
         <div className={`navBar w-full bg-transparent shadow-sm flex flex-row justify-between items-center ${props.location.pathname=="/login"?'hidden':props.location.pathname=="/create"?'hidden':''}`}>
             <div className="logoH w-1/4">
-            <h2 className="logo text-3xl text-black">OSEI SRIBOE</h2>
+            <h2 className="logo text-sm  md:text-3xl text-black">OSEI SRIBOE</h2>
+            </div>
+            
+            <div className="md:hidden flex">
+                <MenuIcon onClick={props.openMenu}/>
             </div>
 
             <div className={`navs hidden md:flex flex-row justify-around w-2/5`}>

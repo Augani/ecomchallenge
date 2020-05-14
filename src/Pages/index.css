@@ -12,6 +12,21 @@
     font-size: 1.5rem;
 }
 
+.navLinkMobile{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.mobileMenu{
+    transition: all .5s ease-in-out;
+    background-color: white;
+    z-index: 20;
+}
+
+.theCard{
+    border-radius: 5px;
+}
+
 .mainLog{
     font-size: 3rem !important;
 }
@@ -45,7 +60,6 @@
 
 .cartCont{
     width: 9rem;
-    
     background-color: white;
     height: 9rem;
     right: 10px;
@@ -158,3 +172,31 @@ position: relative;
     border-right: 2px grey solid;
     transform: scale(1.1);
 }
+
+
+@media only screen and (max-width: 768px) {
+    .cartCont{
+        width: 4rem;
+        background-color: white;
+        height: 4rem;
+        right: 5px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        top: 10%;
+    }
+    .cartCont svg{
+        width: 60%;
+        height: 60%;
+        padding: 10%;
+       
+    }
+    
+    .cartCont span{
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+  }

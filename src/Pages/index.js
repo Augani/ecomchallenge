@@ -44,7 +44,8 @@ class Index extends PureComponent {
     super(props)
 
     this.state = {
-      back: 'white'
+      back: 'white',
+      open: false
     }
   }
 
@@ -62,6 +63,14 @@ class Index extends PureComponent {
         return <Landing />
     }
   }
+
+  showMenu=()=>{
+      var self = this;
+    this.setState({
+        open: !self.state.open
+    })
+  }
+
   background = color => {
     this.setState({
       back: color
@@ -74,6 +83,18 @@ class Index extends PureComponent {
         className={`h-screen w-screen flex relative flex-col  ${'bg-' +
           this.state.back}`}
       >
+      {
+          this.state.open?(
+              <div className="mobileMenu absolute bottom-0 right-0 left-0 ">
+                    <div className="w-full flex flex-col relative pt-10 justify-center items-center">
+                    <div className="absolute top-0 right-0 m-4 text-2xl font-black" onClick={this.showMenu}>x</div>
+                    <Link><h5 className="navLinkMobile">Sunglasses</h5></Link>
+                    <Link><h5 className="navLinkMobile">Shirts</h5></Link>
+                    <Link><h5 className="navLinkMobile">Shoes</h5></Link>
+                    </div>
+              </div>
+          ):null
+      }
         {this.props.state.CART.length ? (
           <Link
             to='/cart'
@@ -90,13 +111,14 @@ class Index extends PureComponent {
             </div>
           </Link>
         ) : null}
-        <Navbar />
-        {!isMobile? this.renderPage(this.props.location.pathname):(
+        <Navbar openMenu={this.showMenu} />
+        {/* {!isMobile? this.renderPage(this.props.location.pathname):(
             <div className="w-full text-2xl h-full flex flex-col justify-center font-bold text-center text-black">
                 Please view on your pc For best viewing experience <br/>
                 Mobile view available soon
             </div>
-        )}
+        )} */}
+        {this.renderPage(this.props.location.pathname)}
 
       </div>
     )
@@ -133,7 +155,7 @@ function LandingW (proper) {
 
   const renderProduct = id => {
     return (
-      <div className='productMain flex flex-row justify-center w-4/5'>
+      <div className='productMain flex flex-col md:flex-row justify-center w-4/5'>
         <animated.div
           className='card w-full flex flex-row justify-center'
           onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
@@ -147,13 +169,13 @@ function LandingW (proper) {
   }
   const renderDes = id => {
     return (
-      <div className='productDes flex flex-col justify-center w-4/5'>
-        <h1>{Products[id].title}</h1>
-        <h1>{Products[id].description}</h1>
+      <div className='productDes flex flex-col justify-center items-center w-full px-3 md:w-4/5'>
+        <h1 className="text-center">{Products[id].title}</h1>
+        <h1 className="text-center">{Products[id].description}</h1>
         <h1>{Products[id].price}</h1>
         <Button
           onClick={() => Buy(id)}
-          className='h-16 bg-black w-1/5 text-white'
+          className='h-16 bg-black w-3/4 md:w-1/5 text-white'
         >
           BUY
         </Button>
@@ -163,11 +185,11 @@ function LandingW (proper) {
 
   return (
     <div className='h-full w-full bg-pink flex flex-col pt-5'>
-      <div className='topClass flex flex-row'>
-        <div className='productShowcase w-1/2 flex flex-row justify-center items-center '>
+      <div className='topClass flex flex-col md:flex-row'>
+        <div className='productShowcase w-full md:w-1/2 flex flex-col md:flex-row justify-center items-center '>
           {renderProduct(current)}
         </div>
-        <div className='productDescription w-1/2 flex justify-center flex-col'>
+        <div className='productDescription w-full md:w-1/2 flex justify-center flex-col'>
           {renderDes(current)}
         </div>
       </div>
