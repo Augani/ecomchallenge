@@ -13,7 +13,7 @@
 }
 
 .mainLog{
-    font-size: 5rem !important;
+    font-size: 3rem !important;
 }
 
 .productTile img{
@@ -38,12 +38,22 @@
     border-radius: 5px;
 }
 
+.deleter{
+    top: 0;
+    right: 5px;
+}
+
 .cartCont{
     width: 9rem;
     
     background-color: white;
     height: 9rem;
     right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
     bottom: 10px;
 }
 
@@ -55,7 +65,7 @@
 .cartCont svg{
     width: 50%;
     height: 50%;
-    margin: 10px !important;
+   
 }
 
 .cardCont::hover{
@@ -114,8 +124,8 @@ input{
   }
 
 .cartReview{
-max-height: 60vh !important;
-overflow: scroll;
+height: 50% !important;
+position: relative;
 }
 
 ::-webkit-scrollbar {

@@ -6,7 +6,7 @@ function Create () {
   return (
     <div className='h-full w-full flex flex-col justify-center items-center '>
       <form className='w-1/5 loginForm flex flex-col'>
-        <h2 className='logo  text-4xl mainLog text-center text-black font-black'>
+        <h2 className='logo  text-2xl mainLog text-center text-black font-black'>
           OSEI SRIBOE
         </h2>
         <div classname='mb-4  w-full '>
@@ -66,7 +66,7 @@ function Create () {
           />
         </div>
 
-        <Button className='w-full mt-16 mb-16 bg-black text-white h-16'>
+        <Button className='w-full mt-6 mb-16 bg-black text-white h-16'>
           Create Account
         </Button>
         <div className='w-full flex flex-col items-center'>

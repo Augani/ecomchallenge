@@ -73,7 +73,7 @@ class Index extends PureComponent {
             to='/cart'
             className='absolute cartCont  flex flex-col justify-center items-center'
           >
-            <div className='w-full h-full relative'>
+            <div className='w-full h-full  relative'>
               <Badge
                 anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
                 badgeContent={this.props.state.CART.length}
@@ -182,9 +182,10 @@ function LandingW (proper) {
 
 function CartW (props) {
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center'>
+    <div className='w-full h-full flex flex-col items-center justify-center overflow-x-hidden'>
       <div className='cartReview md:w-3/4 overflow-x-hidden mb-4 lg:w-3/5 flex flex-col justify-center items-center'>
-        {props.state.CART.map(item => (
+       <div className="h-full w-full overflow-y-auto overflow-x-hidden flex flex-col items-center">
+       {props.state.CART.map(item => (
           <Tile deleteItem={props.DeleteItem} product={item} />
         ))}
         {props.state.CART.length?null:(
@@ -192,6 +193,7 @@ function CartW (props) {
                 EMPTY CART
             </div>
         )}
+       </div>
       </div>
       <div className="w-full md:w-3/4 lg:w-3/5 checkout flex flex-col items-center justify-center">
          <Button className="w-full md:w-3/4 lg:w-3/5 mb-10 bg-black h-16 text-white">CHECKOUT</Button>
@@ -214,18 +216,18 @@ function Tile (props) {
     props.deleteItem(...Products.filter(i => i.id == id))
   }
   return (
-    <div className='productTile shadow-2xl mb-5 bg-gray-100 w-full lg:w-4/5 py-2 px-4'>
+    <div className='productTile shadow-2xl mb-5 bg-gray-100 w-full lg:w-4/5 py-2 px-2'>
       <div className='flex flex-row justify-around items-center'>
-        <img src={props.product.picture} />
-        <div className='h-full md:w-full lg:w-2/3 border-l-2 border-lime px-12 flex flex-col justify-center'>
+        <img src={props.product.picture} className="shadow-2xl" />
+        <div className='md:w-full lg:w-2/3 border-l-2 border-lime px-12 flex flex-col justify-center'>
           <h1 className="font-black">{props.product.title}</h1>
           <h5>{props.product.description}</h5>
           <h6 className="my-2 font-black">{props.product.price}</h6>
           <span
             onClick={() => deleteItem(props.product.id)}
-            className='cursor-pointer w-2/4 bg-black text-center '
+            className='cursor-pointer deleter text-2xl text-black font-bold bg-transparent  text-center absolute'
           >
-            Delete item
+            x
           </span>
         </div>
       </div>
