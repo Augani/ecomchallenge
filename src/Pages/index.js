@@ -91,8 +91,8 @@ class Index extends PureComponent {
                     <Link><h5 className="navLinkMobile">Sunglasses</h5></Link>
                     <Link><h5 className="navLinkMobile">Shirts</h5></Link>
                     <Link><h5 className="navLinkMobile">Shoes</h5></Link>
-                    <Link><h5 className="navLinkMobile">Login</h5></Link>
-                    <Link><h5 className="navLinkMobile">Create account</h5></Link>
+                    <Link to="/login"><h5 className="navLinkMobile">Login</h5></Link>
+                    <Link to="/create"><h5 className="navLinkMobile">Create account</h5></Link>
                     </div>
               </div>
           ):null
