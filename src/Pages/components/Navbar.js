@@ -7,7 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 function Navbar(props){
    
     return (
-        <div className={`navBar w-full bg-transparent shadow-sm flex flex-row justify-between items-center ${props.location.pathname=="/login"?'hidden':props.location.pathname=="/create"?'hidden':''}`}>
+        <div className={`navBar sticky w-full bg-transparent shadow-sm flex flex-row justify-between items-center ${props.location.pathname=="/login"?'hidden':props.location.pathname=="/create"?'hidden':''}`}>
             <div className="logoH w-1/4">
             <h2 className="logo text-sm  md:text-3xl text-black">OSEI SRIBOE</h2>
             </div>

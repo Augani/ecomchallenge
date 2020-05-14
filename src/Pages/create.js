@@ -4,9 +4,9 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 function Create () {
   return (
-    <div className='h-full w-full flex flex-col justify-center items-center '>
-      <form className='w-1/5 loginForm flex flex-col'>
-        <h2 className='logo  text-2xl mainLog text-center text-black font-black'>
+    <div className='h-full w-full flex flex-col justify-center items-center overflow-y-auto '>
+      <form className=' w-4/5 md:w-1/5 h-full loginForm flex flex-col pt-10'>
+        <h2 className='logo text-3xl mb-6  md:text-4xl mt-10 mainLog text-center text-black font-black'>
           OSEI SRIBOE
         </h2>
         <div classname='mb-4  w-full '>
@@ -14,7 +14,7 @@ function Create () {
             className='block text-gray-700 text-sm font-bold mb-2'
             for='username'
           >
-            Fullname
+            Full name
           </label>
           <input
             class='shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
@@ -28,7 +28,7 @@ function Create () {
             className='block text-gray-700 text-sm font-bold mb-2'
             for='username'
           >
-            Email/ Username
+            Email / Username
           </label>
           <input
             class='shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
@@ -66,7 +66,7 @@ function Create () {
           />
         </div>
 
-        <Button className='w-full mt-6 mb-16 bg-black text-white h-16'>
+        <Button className='w-full mt-6 mb-16 bg-black text-white h-16 py-6'>
           Create Account
         </Button>
         <div className='w-full flex flex-col items-center'>

@@ -91,11 +91,13 @@ class Index extends PureComponent {
                     <Link><h5 className="navLinkMobile">Sunglasses</h5></Link>
                     <Link><h5 className="navLinkMobile">Shirts</h5></Link>
                     <Link><h5 className="navLinkMobile">Shoes</h5></Link>
+                    <Link><h5 className="navLinkMobile">Login</h5></Link>
+                    <Link><h5 className="navLinkMobile">Create account</h5></Link>
                     </div>
               </div>
           ):null
       }
-        {this.props.state.CART.length ? (
+        {this.props.state.CART.length && !this.props.location.pathname.startsWith("/cart") ? (
           <Link
             to='/cart'
             className='absolute cartCont  flex flex-col justify-center items-center'
@@ -170,9 +172,9 @@ function LandingW (proper) {
   const renderDes = id => {
     return (
       <div className='productDes flex flex-col justify-center items-center w-full px-3 md:w-4/5'>
-        <h1 className="text-center">{Products[id].title}</h1>
-        <h1 className="text-center">{Products[id].description}</h1>
-        <h1>{Products[id].price}</h1>
+        <h1 className="text-center text-2xl md:text-2xl">{Products[id].title}</h1>
+        <h1 className="text-center text-lg md:text-lg">{Products[id].description}</h1>
+        <h1 className="text-lg md:text-lg">{Products[id].price}</h1>
         <Button
           onClick={() => Buy(id)}
           className='h-16 bg-black w-3/4 md:w-1/5 text-white'
@@ -229,7 +231,7 @@ function CartW (props) {
        </div>
       </div>
       <div className="w-full md:w-3/4 lg:w-3/5 checkout flex flex-col items-center justify-center">
-         <Button className="w-3/4 lg:w-3/5 mb-10 bg-black h-16 text-white">CHECKOUT</Button>
+         {props.state.CART.length?<Button className="w-3/4 lg:w-3/5 mb-10 bg-black h-16 text-white">CHECKOUT</Button>:null}
          <Link to="/"><h5 className="text-2xl">Continue Shopping</h5></Link>   
       </div>
     </div>
@@ -249,13 +251,15 @@ function Tile (props) {
     props.deleteItem(...Products.filter(i => i.id == id))
   }
   return (
-    <div className='productTile shadow-2xl mb-5 bg-gray-100 w-full lg:w-4/5 py-2 px-2'>
-      <div className='flex flex-row justify-around items-center'>
-        <img src={props.product.picture} className="shadow-2xl" />
-        <div className='w-2/4 md:w-full lg:w-2/3 border-l-2 border-lime h-full px-12 flex flex-col'>
-          <h1 className="font-black text-xl text-center">{props.product.title}</h1>
+    <div className='productTile shadow-2xl mb-5 bg-gray-100 w-full lg:w-4/5'>
+      <div className='flex flex-row justify-around w-full h-full'>
+    <div className="w-2/4 flex flex-col p-8">
+    <img src={props.product.picture} className="shadow-2xl" />
+    </div>
+        <div className='w-2/4 md:w-full lg:w-2/3 border-l-2 border-lime h-full px-0  md:px-12 flex flex-col justify-center '>
+          <h1 className="font-black text-sm  md:text-xl text-center">{props.product.title}</h1>
          
-          <h6 className="my-2 font-black text-center">{props.product.price}</h6>
+          <h6 className="my-2 font-black text-sm md:text-lg text-center">{props.product.price}</h6>
           <span
             onClick={() => deleteItem(props.product.id)}
             className='cursor-pointer deleter text-2xl text-black font-bold bg-transparent  text-center absolute'
