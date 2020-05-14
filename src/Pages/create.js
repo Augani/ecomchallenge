@@ -2,7 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
-function Create () {
+function Create (props) {
+    React.useEffect(()=>{
+        props.close();
+    }, [])
   return (
     <div className='h-full w-full flex flex-col justify-center items-center overflow-y-auto relative'>
 

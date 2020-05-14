@@ -54,14 +54,18 @@ class Index extends PureComponent {
       case '/':
         return <Landing changeBack={this.background} />
       case '/create':
-        return <Create />
+        return <Create close={this.closeMenu} />
       case '/login':
-        return <Login />
+        return <Login close={this.closeMenu} />
       case '/cart':
         return <Cart />
       default:
         return <Landing />
     }
+  }
+
+  closeMenu = ()=>{
+      if(this.state.open)this.setState({open: false})
   }
 
   showMenu=()=>{

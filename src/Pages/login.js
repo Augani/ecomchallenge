@@ -3,7 +3,10 @@ import { connect } from 'react-redux'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 
-function Login() {
+function Login(props) {
+    React.useEffect(()=>{
+        props.close();
+    }, [])
     return (
         <div className="h-full w-full flex flex-col justify-center items-center relative">
          <div className="h-full w-full z-0 backdrop absolute flex flex-row justify-center overflow-y-hidden">
