@@ -172,12 +172,12 @@ function LandingW (proper) {
   const renderDes = id => {
     return (
       <div className='productDes flex flex-col justify-center items-center w-full px-3 md:w-4/5'>
-        <h1 className="text-center text-2xl md:text-2xl">{Products[id].title}</h1>
-        <h1 className="text-center text-lg md:text-lg">{Products[id].description}</h1>
-        <h1 className="text-lg md:text-lg">{Products[id].price}</h1>
+        <h1 className="text-center text-2xl md:text-4xl">{Products[id].title}</h1>
+        <h1 className="text-center text-lg md:text-3xl">{Products[id].description}</h1>
+        <h1 className="text-lg md:text-3xl">${Products[id].price}</h1>
         <Button
           onClick={() => Buy(id)}
-          className='h-16 bg-black w-3/4 md:w-1/5 text-white'
+          className='h-16 bg-black w-3/4 md:w-1/5 text-white md:text-xl'
         >
           BUY
         </Button>
@@ -216,6 +216,11 @@ function LandingW (proper) {
 }
 
 function CartW (props) {
+    const Total = function(){
+       return props.state.CART.reduce((a,b)=>{
+            return a + b
+        }, 0)
+    }
   return (
     <div className='w-full h-full flex flex-col items-center justify-center overflow-x-hidden'>
       <div className='cartReview md:w-3/4 overflow-x-hidden mb-4 lg:w-3/5 flex flex-col justify-center items-center'>
@@ -253,13 +258,13 @@ function Tile (props) {
   return (
     <div className='productTile shadow-2xl mb-5 bg-gray-100 w-full lg:w-4/5'>
       <div className='flex flex-row justify-around w-full h-full'>
-    <div className="w-2/4 flex flex-col p-8">
+    <div className="w-2/4 flex flex-col p-8 justify-center items-center">
     <img src={props.product.picture} className="shadow-2xl" />
     </div>
-        <div className='w-2/4 md:w-full lg:w-2/3 border-l-2 border-lime h-full px-0  md:px-12 flex flex-col justify-center '>
-          <h1 className="font-black text-sm  md:text-xl text-center">{props.product.title}</h1>
+        <div className='w-2/4 md:w-full lg:w-2/4 border-l-2 border-lime h-full px-0  md:px-12 flex flex-col justify-center '>
+          <h1 className="font-black text-sm  md:text-xl lg:text-2xl text-center">{props.product.title}</h1>
          
-          <h6 className="my-2 font-black text-sm md:text-lg text-center">{props.product.price}</h6>
+          <h6 className="my-2 font-black text-sm md:text-lg lg:text-2xl text-center">${props.product.price}</h6>
           <span
             onClick={() => deleteItem(props.product.id)}
             className='cursor-pointer deleter text-2xl text-black font-bold bg-transparent  text-center absolute'

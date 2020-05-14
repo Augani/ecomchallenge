@@ -4,8 +4,12 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 function Create () {
   return (
-    <div className='h-full w-full flex flex-col justify-center items-center overflow-y-auto '>
-      <form className=' w-4/5 md:w-1/5 h-full loginForm flex flex-col pt-10'>
+    <div className='h-full w-full flex flex-col justify-center items-center overflow-y-auto relative'>
+
+    <div className="h-full w-full z-0 backdrop absolute flex flex-row justify-center overflow-y-hidden">
+    OSEI
+    </div>
+      <form className=' w-4/5 md:w-1/5 h-full loginForm flex flex-col pt-10 z-10'>
         <h2 className='logo text-3xl mb-6  md:text-4xl mt-10 mainLog text-center text-black font-black'>
           OSEI SRIBOE
         </h2>

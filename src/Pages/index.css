@@ -31,8 +31,8 @@
 
 .productTile img{
     border-radius: 5px;
-    height: 10%;
-    width: 10%;
+   height: 100%;
+   
 }
 
 .checkout button{
@@ -46,7 +46,7 @@
 }
 
 .productTile{
-    height: 11rem;
+    height: 50%;
     position: relative;
     border-radius: 5px;
 }
@@ -136,8 +136,16 @@ input{
   }
 
 .cartReview{
-height: 50% !important;
+height: 70% !important;
 position: relative;
+}
+
+.backdrop{
+    font-size: 30rem;
+    opacity: 0.1;
+    font-weight: lighter;
+  
+  
 }
 
 ::-webkit-scrollbar {

@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom'
 
 function Login() {
     return (
-        <div className="h-full w-full flex flex-col justify-center items-center ">
-        <form className="w-4/5  md:w-1/4 loginForm flex flex-col ">
+        <div className="h-full w-full flex flex-col justify-center items-center relative">
+         <div className="h-full w-full z-0 backdrop absolute flex flex-row justify-center overflow-y-hidden">
+    SRIBOE
+    </div>
+        <form className="w-4/5  md:w-1/4 loginForm flex flex-col z-10">
         <h2 className="logo text-3xl mb-4 w-full  md:text-5xl mainLog text-center text-black font-black">OSEI SRIBOE</h2>
         <div classname="mb-4 mt-4  w-full ">
       <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
